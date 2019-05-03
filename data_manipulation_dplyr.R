@@ -7,7 +7,7 @@ library(dplyr)
 language <- fread("./Language/der2_cRefset_LanguageSnapshot.txt", colClasses = 'character')
 Concept <- fread("./Terminology/sct2_Concept_Snapshot.txt", colClasses = 'character')
 description <- fread("./Terminology/sct2_Description_Snapshot.txt", colClasses = 'character')
-ExtendedMapFull <- fread("H:/Byon8/Terminology/snomed/SNOMEDCT_InternationalRF2/Full/Refset/Map/der2_iisssccRefset_ExtendedMapFull_INT_20180131.txt", colClasses = 'character')
+ExtendedMapFull <- fread("./Terminology/snomed/SNOMEDCT_InternationalRF2/Full/Refset/Map/der2_iisssccRefset_ExtendedMapFull.txt", colClasses = 'character')
 
 
 # Dataset of Active concept, Fully specified name for description & Preferred acceptability
