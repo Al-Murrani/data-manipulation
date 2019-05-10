@@ -13,14 +13,14 @@ ExtendedMapFull <- fread("./Terminology/snomed/SNOMEDCT_InternationalRF2/Full/Re
 # Dataset of Active concept, Fully specified name for description & Preferred acceptability
 medical_terminology <- Concept %>%
   left_join(description, by = c("id" = "conceptId"), keep=FALSE) %>%
-  full_join(language, by = c("id.y" = "referencedComponentId"), keep=FALSE) %>%
+  left_join(language, by = c("id.y" = "referencedComponentId"), keep=FALSE) %>%
   filter(active.x == "1", typeId == "900000000000003001", refsetId == "900000000000509007", acceptabilityId == "900000000000548007") %>%
   select(term, id.y)
 
 # Dataset for concepts synonym
 synonym <- Concept %>%
   left_join(description, by = c("id" = "conceptId"), keep=FALSE) %>%
-  full_join(language, by = c("id.y" = "referencedComponentId"), keep=FALSE) %>%
+  left_join(language, by = c("id.y" = "referencedComponentId"), keep=FALSE) %>%
   filter(active.x == "1", typeId == "900000000000013009", refsetId == "900000000000509007", acceptabilityId == "900000000000549004") %>%
   select(term, id.y)
 
